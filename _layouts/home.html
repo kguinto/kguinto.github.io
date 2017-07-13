@@ -1,0 +1,171 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  {{ content }}
+
+  <div id="intro-box" class="text-box" onload="delayedProjectShow()">
+      <h1 class="animated fadeInDown"style="margin-bottom: 5px"> Kirk Louie Guinto &#8226; <span id="email"></span></h1>
+      <div class="inside">
+        <table>
+          <tr class="animated fadeInLeft" style="animation-delay: .2s;">
+            <td id="icons"><i class="fa fa-graduation-cap"></i></td>
+            <td id="desc">
+              <span class="important">University of Hawaii at Manoa</span><br>
+              Information and Computer Science B.A./Linguistics focus, May 2017
+            </td>
+          </tr>
+          <tr class="animated fadeInLeft" style="animation-delay: .3s;">
+            <td id="icons"><i class="fa fa-paperclip"></i></td>
+            <td id="desc">
+                <span class="important">Computer Support Specialist & Database Programmer @ <a href="http://manoa.hawaii.edu/undergrad/SAAS/" target="_blank">Student Athlete Academic Services</a> </span>
+            </td>
+          </tr>
+          <tr class="animated fadeInLeft" style="animation-delay: .4s;">
+            <td id="icons"><i class="fa fa-heart"></i></td>
+            <td id="desc">
+              <span class="important">interested in</span> natural language processing, artificial intelligence, pc building, marvel movies
+            </td>
+          </tr>
+        </table>
+        <br>
+      </div>
+
+      <div class="inside no-padding animated fadeIn"  style="animation-delay: .8s;" align="center">
+        <hr><br>
+         &#8226;
+         <a id="projects-trigger" href="#">projects</a> &#8226;
+         <a id="resume-trigger" href="#">resume</a> &#8226;
+         <a target= "_blank" href="http://github.com/kguinto"><i class="fa fa-github-alt"></i></a> &#8226;
+         <a target= "_blank" href="https://www.linkedin.com/in/kirklouieguinto"><i class="fa fa-linkedin"></i></a> &#8226;
+         <br> <br>
+         <hr>
+         <br>
+      </div>
+
+    </div>
+
+
+    <div id="resume" class="animated text-box" style="display: none;">
+      <iframe id="resume-frame" style="width:100%; height:80vh;" frameborder="0"></iframe>
+    </div>
+
+    <div id="projects" style="display: none;">
+      <h2 class="important">Projects</h2>
+      <table>
+        <tr>
+          <a class="important" href="/projects/corpus-tagger"><i>CorpusTagger</i></a>
+          <p>Analyze lexical diversity and density of ESL essays.<br><span class="important">C#, .NET, Natural Language Processing.</span> </p>
+        </tr>
+        <tr>
+          <a class="important" href="/projects/mov"><i>MOV</i></a>
+          <p>Mobile-oriented video editing.<br><span class="important">Swift, iOS.</span> </p>
+        </tr>
+        <tr>
+          <a class="important" href="/projects/manoa-student-kitchen"><i>Manoa Student Kitchen</i></a>
+          <p>Recipe sharing between students.<br><span class="important">Web, HTML, Javascript, Meteor.</span> </p>
+        </tr>
+        <tr>
+          <a class="important"><i>Ven&#252;</i></a>
+          <p>Event information for attendees.<br><span class="important">Swift, iOS, Amazon Web Services, BLE.</span> </p>
+        </tr>
+        <tr>
+          <a class="important"><i>Cabulary</i></a>
+          <p>Vocab lists for travelers.<br><span class="important">Kotlin, Android.</span> </p>
+        </tr>
+      </table>
+    </div>
+
+    <div id="test" style="display: none;">
+      <iframe id="test-frame" style="width:100%; height:80vh;" frameborder="0"></iframe>
+    </div>
+
+
+    <script>
+      // Email (Spam Prevention)
+        var username = "kguinto";
+        var hostname = "hawaii.edu";
+        var linktext = username + "@" + hostname;
+        document.getElementById('email').innerHTML = '<a href="mailto:' + linktext + '">' + linktext + '</a>';
+
+        var resumeLoaded = false;
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+      var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+
+      for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+
+          if (sParameterName[0] === sParam) {
+              return sParameterName[1] === undefined ? true : sParameterName[1];
+          }
+      }
+  };
+
+  delayedProjectShow();
+            console.log(getUrlParameter('showProjects'))
+
+        function delayedProjectShow(){
+
+          if(getUrlParameter('showProjects')){
+            closeAll();
+            $('#projects').removeClass();
+            $('#projects').show();
+            $('#projects').addClass('animated fadeInUp');
+            $('#projects').css('animation-delay', '1.2s');
+
+            var uri = window.location.toString();
+            if (uri.indexOf("?") > 0) {
+                var clean_uri = uri.substring(0, uri.indexOf("?"));
+                window.history.replaceState({}, document.title, clean_uri);
+            }
+          }
+      }
+
+      function closeAll() {
+        $('#resume').hide();
+        $('#projects').hide();
+
+        $('#resume').removeClass();
+        $('#projects').removeClass();
+      }
+
+      $('#resume-trigger').click(function(e) {
+        if(!resumeLoaded){
+            document.getElementById('resume-frame').src="https://drive.google.com/file/d/0B1pWeVDEPkHOTTVPaExWYnRNbWM/preview";
+            resumeLoaded = true;
+        }
+
+        if ($('#resume').is(":visible")) {
+          $('#resume').removeClass();
+          $('#resume').fadeOut();
+        } else {
+          closeAll();
+          $('#resume').show();
+          $('#resume').addClass('animated fadeInUp');
+        }
+      } );
+
+
+      $('#projects-trigger').click(function(e) {
+        $('#projects').css('animation-delay', '0s');
+        if ($('#projects').is(":visible")) {
+          $('#projects').removeClass();
+          $('#projects').fadeOut();
+        //  $('#projects').addClass('animated fadeOutDown');
+        } else {
+          closeAll();
+          $('#projects').removeClass();
+          $('#projects').show();
+          $('#projects').addClass('animated fadeInUp');
+        }
+      } );
+      </script>
+
+
+</div>
