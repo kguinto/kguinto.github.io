@@ -281,3 +281,23 @@
     }
   }
 }
+
+.ui.image {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+img.ui.image {
+  display: block;
+}
+
+.ui.images {
+  font-size: 0em;
+}
+
+.ui.images .image,
+.ui.images img,
+.ui.images svg {
+  display: inline-block;
+}
