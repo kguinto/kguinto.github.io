@@ -1,14 +1,5 @@
-<<<<<<< HEAD
 layout: page
 title: Venü
-=======
----
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: page
-title: Ven&#252;
->>>>>>> origin/master
 ---
 
 Ven&#252; is an iOS app developed for the [AT&T Hackathon](https://www.eventbrite.com/e/att-hackathon-hawaii-tickets-31100289804) that occurred in March 2017 in Honolulu, Hawaii. It was conceptualized, designed, and coded over a 24-hour period by myself and four other students from UH Manoa.
