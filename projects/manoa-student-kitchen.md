@@ -2,7 +2,6 @@
 layout: page
 title: Manoa Student Kitchen
 ---
-
 <img class="ui image" src="../../images/MSK_Home.png">
 
 Manoa Student Kitchen is an web-based application designed using Meteor, Semantic UI and Underscore that provides the ability for students at UH Manoa to share recipes that are tailored to the UH Manoa campus and culture. The app was my final project for ICS 314 (Software Engineering), and I worked in a team of three with other students at UH Manoa.

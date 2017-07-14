@@ -2,7 +2,6 @@
 layout: page
 title: MOV
 ---
-
 <table>
   <tr>
     <td> <img style="float: left" class="ui image" src="../../images/mov-timeline.jpg"> </td>
