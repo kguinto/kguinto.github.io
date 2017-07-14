@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Ven\252
+title: "Ven\252"
 ---
 
 Ven&#252; is an iOS app developed for the [AT&T Hackathon](https://www.eventbrite.com/e/att-hackathon-hawaii-tickets-31100289804) that occurred in March 2017 in Honolulu, Hawaii. It was conceptualized, designed, and coded over a 24-hour period by myself and four other students from UH Manoa.
